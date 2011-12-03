@@ -127,6 +127,7 @@ rpg.startGame = function(gender) {
   }
 };
 
+<<<<<<< Updated upstream
 function createCookie(name,value,days) {
   if (days) {
     var date = new Date();
@@ -158,3 +159,8 @@ console.log(character)
 if(character){
   rpg.startGame(character);
 }
+
+$("#startScreen button").show();
+
+rpg.chooseCharacter();
+rpg.startGame('girl');

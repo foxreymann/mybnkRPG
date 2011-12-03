@@ -1,3 +1,6 @@
+#startScreen button{
+    display:none;
+}
 .screen {
     position:absolute;
     width:100%;
@@ -18,13 +21,13 @@
 }
 #gameScreen .character{
     position:absolute;
-    width:10%;
-    height:10%;
+    width:30%;
+    max-height:20%;
     display:none;
 }
 #money{
     position:absolute;
-    left:20%;
+    left:32%;
 }
 #choice{
     position:absolute;
@@ -36,8 +39,10 @@ a.bank{
   font-size:20px;
   margin:10px;
 }
-
 #end{
   position:absolute;
   bottom:10px;
+}
+#moneyIcon{
+    max-height:10%;
 }
