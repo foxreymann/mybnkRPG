@@ -15,7 +15,7 @@
   
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="stylesheets/foundation.css">
-	<link rel="stylesheet" href="stylesheets/app.css">
+	<link rel="stylesheet" href="stylesheets/app.css?v=2">
 
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" href="stylesheets/ie.css">
@@ -69,12 +69,17 @@
                     <img src="img/time.jpg"/ id="moneyIcon"><span id='weekday'>0</span>: <span id='time'></span>
                 </div>            
             </div>
-       		<div class="row">
+       		<div class="row" id="choice">
     			<div class="twelve columns">
-                    <div id='choice'>
-                        <div class='desc alert-box'></div>
-                    </div>
+                        <div class='desc alert-box warning'></div>
                 </div>            
+            </div>
+       		<div class="row">
+                <div class="nine columns">
+                </div>
+    			<div class="three columns">
+                    <a href='#' id='end' class="black radius nice button">Restart the game</a>
+                </div>
             </div>
         </div>
 
@@ -87,7 +92,7 @@
 	<script src="javascripts/foundation.js"></script>
 	<script src="js/jquery-1.7.1.min.js"></script>
 	<script src="js/gamelevel.js"></script>
-	<script src="js/a.js"></script>
+	<script src="js/a.js?v=2"></script>
 	
 </body>
 </html>

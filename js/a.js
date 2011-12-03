@@ -83,7 +83,7 @@ rpg.startGame = function(gender) {
     choice = randomChoice()
     $('#choice .desc').text(choice.title)
     $.each(choice.options, function(i,option){
-      html = "<a href='#' class='option' id='option"+i+"' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a>"
+      html = "<div class='row'><div class='twelve columns'><a href='#' class='option white radius nice button' id='option"+i+"' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a></div></div>";
       $('#choice .desc').after(html)
       if(option.url){
         $('#option'+i).click(function(){
