@@ -1,109 +1,93 @@
-<!doctype html>
-<!-- Conditional comment for mobile ie7 http://blogs.msdn.com/b/iemobile/ -->
-<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
-<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+<!DOCTYPE html>
 
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
+	<meta charset="utf-8" />
+	
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width" />
+	
+	<title>Welcome to Foundation</title>
+  
+	<!-- Included CSS Files -->
+	<link rel="stylesheet" href="stylesheets/foundation.css">
+	<link rel="stylesheet" href="stylesheets/app.css">
 
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+	<![endif]-->
 
-  <!-- Mobile viewport optimization http://goo.gl/b9SaQ -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 
-  <!-- Home screen icon  Mathias Bynens http://goo.gl/6nVq0 -->
-  <!-- For iPhone 4 with high-resolution Retina display: -->
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/h/apple-touch-icon.png">
-  <!-- For first-generation iPad: -->
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/m/apple-touch-icon.png">
-  <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-  <link rel="apple-touch-icon-precomposed" href="img/l/apple-touch-icon-precomposed.png">
-  <!-- For nokia devices: -->
-  <link rel="shortcut icon" href="img/l/apple-touch-icon.png">
-
-  <!--iOS web app, deletable if not needed -->
-  <!--the script prevents links from opening in mobile safari. https://gist.github.com/1042026
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
-  <link rel="apple-touch-startup-image" href="img/l/splash.png">-->
-
-  <!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
-  <meta http-equiv="cleartype" content="on">
-
-  <!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
-
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=1">
-  <link rel="stylesheet" href="css/foundation.css?v=1">
-  <link rel="stylesheet" href="css/a.css?v=1">
-
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="js/libs/modernizr-custom.js"></script>
-  <!-- Media Queries Polyfill https://github.com/shichuan/mobile-html5-boilerplate/wiki/Media-Queries-Polyfill -->
-  <script>Modernizr.mq('(min-width:0)') || document.write('<script src="js/libs/respond.min.js">\x3C/script>')</script>
 </head>
-
 <body>
 
-    <div id="startScreen" class="screen">
-        <h2>
-            MyBnk Learn Finance Game
-        </h2>
-        <div id="main" role="main">
-            <button type="button" onclick="rpg.chooseCharacter()">Start game</button>
-            <button type="button">Instructions</button> 
+	<!-- container -->
+	<div class="container">
+		
+		<div class="row" id="startScreen">
+			<div class="eight columns">
+                <h1>myBnk RPG</h1>
+   				<h2>Learn to manage to your finance</h2>
+   				<h2>From the debtor to the rich</h2>
+			</div>
+			<div class="four columns">
+                <br /><br />
+                <a href="#" class="nice small radius blue button" onclick="rpg.chooseCharacter()">Start game</a>
+                <a href="#" class="nice small radius blue button">Instructions</a>
+            </div>
+		</div>
+		
+        <div id="chooseCharacter" class="screen">
+       		<div class="row">
+    			<div class="twelve columns">
+                    <h2>Choose a character</h2>
+                </div>
+            </div>
+       		<div class="row">
+    			<div class="twelve columns">
+                    <img class="character" id="characterGirl" src="img/girl.jpg" onclick="rpg.startGame('girl')" />
+                    <img class="character" id="characterBoy" src="img/boy.jpg" onclick="rpg.startGame('boy')"   />
+                </div>
+            </div>
         </div>
-    </div> <!--! end of #container -->
-    
-    <div id="chooseCharacter" class="screen">
-        <h2 id="choosecharacter">Choose a character</h2>
-        <img class="character" id="characterGirl" src="img/girl.jpg" onclick="rpg.startGame('girl')" />
-        <img class="character" id="characterBoy" src="img/boy.jpg" onclick="rpg.startGame('boy')"   />
-    </div>  
 
-    <div id="gameScreen" class="screen">
-        <img class="character girl" src="img/girlHead.jpg" />
-        <img class="character boy" src="img/boyHead.jpg" />
-        <div id="money">
-            <img src="img/money.png"/ id="moneyIcon">You have got &pound;<span id='total'>0</span><br />
-            <img src="img/time.jpg"/ id="moneyIcon"><span id='weekday'>0</span>: <span id='time'></span>
+        <div id="gameScreen">
+       		<div class="row">
+    			<div class="twelve columns">
+                    <img class="character girl" src="img/girlHead.jpg" />
+                    <img class="character boy" src="img/boyHead.jpg" />
+                    <img src="img/money.png"/ id="moneyIcon">You have got &pound;<span id='total'>0</span><br />
+                    <img src="img/time.jpg"/ id="moneyIcon"><span id='weekday'>0</span>: <span id='time'></span>
+                </div>            
+            </div>
+       		<div class="row">
+    			<div class="twelve columns">
+                    <div id='choice'>
+                        <div class='desc alert-box'></div>
+                    </div>
+                </div>            
+            </div>
         </div>
-        <div id='choice'>
-          <p class='desc'></p>
-        </div>
-        <a href='#' id='end'>End Game</a>
-    </div>  
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script type="text/javascript" src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
-  <!-- scripts concatenated and minified via ant build script -->
-  <script src="js/gamelevel.js"></script>
-  <script type="text/javascript" src='js/game.js'></script>
-  <script src="js/a.js"></script>
-  <!-- end concatenated and minified scripts-->
+	</div>
+	<!-- container -->
 
-  <script>
-    // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
-    // MBP.scaleFix();
-  </script>
 
-  <!-- Debugger - remove for production -->
-  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
-
-  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-    s.parentNode.insertBefore(g,s)}(document,"script"));
-  </script>
-
+	<!-- Included JS Files -->
+	<script src="javascripts/foundation.js"></script>
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/gamelevel.js"></script>
+	<script src="js/a.js"></script>
+	
 </body>
 </html>

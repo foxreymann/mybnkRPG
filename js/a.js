@@ -14,11 +14,11 @@ rpg.startGame = function(gender) {
         $("#gameScreen .girl").show();
     }
 
-  var dayOfWeek =   readCookie('dayOfWeek')   || 0;
-  var daySection =  readCookie('daySection')  || 1;
-  var daysWorked =  readCookie('daysWorked')  || 0;
-  var money =       readCookie('money')       || 200;
-  var wages =       readCookie('wages')       || 100;
+  var dayOfWeek =   parseInt(readCookie('dayOfWeek'))   || 0;
+  var daySection =  parseInt(readCookie('daySection'))  || 1;
+  var daysWorked =  parseInt(readCookie('daysWorked'))  || 0;
+  var money =       parseInt(readCookie('money'))       || 200;
+  var wages =       parseInt(readCookie('wages'))       || 100;
   
   var daysOfTheWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
   var timesOfTheDay = ['7:00am','1:00pm','7:00pm']
@@ -153,13 +153,10 @@ function eraseCookie(name) {
 }
 
 
-var character = readCookie('character')
+/*var character = readCookie('character')
 console.log(character)
 if(character){
   rpg.startGame(character);
-}
+}*/
 
-$("#startScreen button").show();
-
-//rpg.chooseCharacter();
-//rpg.startGame('girl');
+$("#startScreen a.button").show();

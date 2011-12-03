@@ -1,0 +1,63 @@
+/* Foundation v2.1.1 http://foundation.zurb.com */
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+
+
+
+
+
+/* -----------------------------------------
+   Start screen
+----------------------------------------- */
+#startScreen {
+    display:block;
+}
+#startScreen a.button {
+    display:none;
+}
+
+
+
+
+
+
+/* -----------------------------------------
+   choose character
+----------------------------------------- */
+#chooseCharacter{
+    display:none;
+}
+#chooseCharacter img{
+    max-height:70%;
+    width:40%;
+}
+
+/* -----------------------------------------
+   game
+----------------------------------------- */
+#gameScreen{
+    display:none;
+}
+#gameScreen .character{
+    display:none;
+    width:25%;
+    float:left;
+}
+#moneyIcon{
+    width:10%;
+}
+
+
+
