@@ -1,20 +1,24 @@
 rpg.chooseCharacter = function() {
-    $('#startScreen').fadeOut();
-    $('#chooseCharacter').fadeIn();
+  $('#startScreen').hide();
+  $('#chooseCharacter').show();
 }
 rpg.startGame = function(gender) {
-    $('#chooseCharacter').fadeOut();
+    createCookie('character', gender)
+  
+    $('#startScreen').hide();
+    $('#chooseCharacter').hide();
     $('#gameScreen').fadeIn();
     if(gender === 'boy') {
         $("#gameScreen .boy").show();
     } else {
         $("#gameScreen .girl").show();
     }
-  var dayOfWeek = 0;
-  var daySection = 1;
-  var daysWorked = 0;
-  var money = 200;
-  var wages = 100;
+
+  var dayOfWeek =   readCookie('dayOfWeek')   || 0;
+  var daySection =  readCookie('daySection')  || 1;
+  var daysWorked =  readCookie('daysWorked')  || 0;
+  var money =       readCookie('money')       || 200;
+  var wages =       readCookie('wages')       || 100;
   
   var daysOfTheWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
   var timesOfTheDay = ['7:00am','1:00pm','7:00pm']
@@ -27,9 +31,13 @@ rpg.startGame = function(gender) {
     nextPartOfDay();
   });
   
-  function choose(){
-  }
-  
+  $('#end').click(function(){
+    eraseCookies()
+    $('#startScreen').show();
+    $('#chooseCharacter').hide();
+    $('#gameScreen').hide();
+  });
+
   function work(){
     daysWorked += 1;
     money += wages;
@@ -84,7 +92,25 @@ rpg.startGame = function(gender) {
         })
       }
     })
+
+    eraseCookies()
+
+    createCookie('dayOfWeek',   dayOfWeek) 
+    createCookie('daySection',  daySection)
+    createCookie('daysWorked',  daysWorked)
+    createCookie('money',       money)     
+    createCookie('wages',       wages)     
+
   }
+  
+  function eraseCookies(){
+    eraseCookie('dayOfWeek')
+    eraseCookie('daySection')
+    eraseCookie('daysWorked')
+    eraseCookie('money')
+    eraseCookie('wages')
+  }
+  
   
   function nextDay(){
     dayOfWeek += 1;
@@ -100,3 +126,35 @@ rpg.startGame = function(gender) {
     tick();
   }
 };
+
+function createCookie(name,value,days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime()+(days*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+  }
+  else var expires = "";
+  document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+  var nameEQ = name + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+  }
+  return null;
+}
+
+function eraseCookie(name) {
+  createCookie(name,"",-1);
+}
+
+
+var character = readCookie('character')
+console.log(character)
+if(character){
+  rpg.startGame(character);
+}
