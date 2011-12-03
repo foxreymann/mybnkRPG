@@ -1,5 +1,5 @@
 .screen {
-    position:fixed;
+    position:absolute;
     width:100%;
     height:100%;
     display:none;
@@ -9,7 +9,7 @@
 }
 .character {
     width:40%;
-    height:60%;
+    max-height:60%;
     margin-left:0 0 0 10%; 
 }
 
@@ -17,9 +17,16 @@
     width:100%;
 }
 #gameScreen .character{
-    position:fixed;
+    position:absolute;
     width:10%;
     height:10%;
     display:none;
 }
-
+#money{
+    position:absolute;
+    left:20%;
+}
+#choice{
+    position:absolute;
+    top:20%; 
+}

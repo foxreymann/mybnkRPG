@@ -13,62 +13,21 @@ rpg.startGame = function(gender) {
   var dayOfWeek = 0;
   var daySection = 1;
   var daysWorked = 0;
-  var money = 0;
+  var money = 200;
   var wages = 100;
   
   var daysOfTheWeek = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
   var timesOfTheDay = ['7:00am','1:00pm','7:00pm']
   
-  var choices = [
-    {'title': "You're phone is broken and you need to buy a new one, which will you choose?",
-      'options': [{
-        'title': 'Used Nokia',
-        'value': -20},
-        {'title': 'iPhone 4S',
-          'value': -400}
-      ]
-    },
-    {'title': "School holidays are coming up, where will you take your kids",
-      'options': [{
-        'title': 'Butlins',
-        'value': -100
-      },{
-          'title': 'Disneyland',
-          'value': -1000
-      }
-      ]
-    }
-  ]
-  
-  tick()
-  
-  $('.action').click(function(){
-    $('.action').hide()
-    $('#day').show()
-  });
-  
-  $('.work').click(function(){
-    work()
-  });
-  
-  $('.choice').click(function(){
-    choose()
-  });
+  tick();
   
   $('.option').live('click',function(){
     value = parseInt($(this).data().value)
     money += value
-    nextPartOfDay()
+    nextPartOfDay();
   });
   
   function choose(){
-    $('#choice').show();
-    $('#day').hide();
-    choice = randomChoice()
-    $('#choice .desc').text(choice.title)
-    $.each(choice.options, function(i,option){
-      $('#choice .desc').after("<a href='#' class='option' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a>")
-    })
   }
   
   function work(){
@@ -78,7 +37,7 @@ rpg.startGame = function(gender) {
   }
   
   function randomChoice(){
-    c = choices[Math.floor(Math.random()*choices.length)]
+    c = rpg.choices[Math.floor(Math.random()*rpg.choices.length)]
     return c
   }
   
@@ -111,6 +70,13 @@ rpg.startGame = function(gender) {
     $('#day, #choice').hide()
     $('.action').show()
     $('#time').text(timesOfTheDay[daySection -1])
+    $('#choice').show();
+    $('#day').hide();
+    choice = randomChoice()
+    $('#choice .desc').text(choice.title)
+    $.each(choice.options, function(i,option){
+      $('#choice .desc').after("<a href='#' class='option' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a>")
+    })
   }
   
   function nextDay(){
