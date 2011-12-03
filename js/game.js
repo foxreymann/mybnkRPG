@@ -26,6 +26,7 @@ $(document).ready(function() {
   ]
   
   $('#day, #choice').hide()
+  $('#wage').html('(+ &pound;'+wages+')')
   
   $('.action').click(function(){
     $('.action').hide()
