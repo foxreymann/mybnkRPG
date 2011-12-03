@@ -1,0 +1,25 @@
+.screen {
+    position:fixed;
+    width:100%;
+    height:100%;
+    display:none;
+}
+#startScreen {
+    display:block;
+}
+.character {
+    width:40%;
+    height:60%;
+    margin-left:0 0 0 10%; 
+}
+
+#choosecharacter{
+    width:100%;
+}
+#gameScreen .character{
+    position:fixed;
+    width:10%;
+    height:10%;
+    display:none;
+}
+

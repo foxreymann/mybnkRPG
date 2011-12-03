@@ -39,6 +39,7 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css?v=1">
+  <link rel="stylesheet" href="css/a.css?v=1">
 
   <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
   <script src="js/libs/modernizr-custom.js"></script>
@@ -48,33 +49,39 @@
 
 <body>
 
-  <div id="container">
-    <header>
+    <div id="startScreen" class="screen">
+        <h2>
+            MyBnk Learn Finance Game
+        </h2>
+        <div id="main" role="main">
+            <button type="button" onclick="rpg.chooseCharacter()">Start game</button>
+            <button type="button">Instructions</button> 
+        </div>
+    </div> <!--! end of #container -->
+    
+    <div id="chooseCharacter" class="screen">
+        <h2 id="choosecharacter">Choose a character</h2>
+        <img class="character" id="characterGirl" src="img/girl.jpg" onclick="rpg.startGame('girl')" />
+        <img class="character" id="characterBoy" src="img/boy.jpg" onclick="rpg.startGame('boy')"   />
+    </div>  
 
-    </header>
-    <div id="main" role="main">
-
-    </div>
-
-    <footer>
-
-    </footer>
-  </div> <!--! end of #container -->
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
+    <div id="gameScreen" class="screen">
+        <img class="character girl" src="img/girlHead.jpg" />
+        <img class="character boy" src="img/boyHead.jpg" />
+    </div>  
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via ant build script -->
-  <script src="js/mylibs/helper.js"></script>
+  <script src="js/gamelevel.js"></script>
+  <script src="js/a.js"></script>
   <!-- end concatenated and minified scripts-->
 
   <script>
     // iPhone Scale Bug Fix, read this when using http://www.blog.highub.com/mobile-2/a-fix-for-iphone-viewport-scale-bug/
-    MBP.scaleFix();
+    // MBP.scaleFix();
   </script>
 
   <!-- Debugger - remove for production -->
