@@ -75,7 +75,14 @@ rpg.startGame = function(gender) {
     choice = randomChoice()
     $('#choice .desc').text(choice.title)
     $.each(choice.options, function(i,option){
-      $('#choice .desc').after("<a href='#' class='option' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a>")
+      html = "<a href='#' class='option' id='option"+i+"' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a>"
+      $('#choice .desc').after(html)
+      if(option.url){
+        $('#option'+i).click(function(){
+          var newWindow = window.open(option.url, '_blank');
+          newWindow.focus();
+        })
+      }
     })
   }
   

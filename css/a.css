@@ -30,3 +30,9 @@
     position:absolute;
     top:20%; 
 }
+a.bank{
+  display:block;
+  font-weight:bold;
+  font-size:20px;
+  margin:10px;
+}
