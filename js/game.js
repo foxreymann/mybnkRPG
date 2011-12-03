@@ -34,20 +34,11 @@ $(document).ready(function() {
   });
   
   $('.work').click(function(){
-    daysWorked += 1;
-    money += wages;
-    nextDay()
+    work()
   });
   
   $('.choice').click(function(){
-    $('#choice').show();
-    $('#day').hide();
-    choice = randomChoice()
-    $('#choice .desc').text(choice.title)
-    $.each(choice.options, function(i,option){
-      $('#choice .desc').after("<a href='#' class='option' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a>")
-    })
-    
+    choose()
   });
   
   $('.option').live('click',function(){
@@ -55,6 +46,22 @@ $(document).ready(function() {
     money += value
     nextDay()
   });
+  
+  function choose(){
+    $('#choice').show();
+    $('#day').hide();
+    choice = randomChoice()
+    $('#choice .desc').text(choice.title)
+    $.each(choice.options, function(i,option){
+      $('#choice .desc').after("<a href='#' class='option' data-value='"+option.value+"'>"+option.title+ '('+option.value+")</a>")
+    })
+  }
+  
+  function work(){
+    daysWorked += 1;
+    money += wages;
+    nextDay()
+  }
   
   function randomChoice(){
     c = choices[Math.floor(Math.random()*choices.length)]
