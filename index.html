@@ -68,14 +68,26 @@
     <div id="gameScreen" class="screen">
         <img class="character girl" src="img/girlHead.jpg" />
         <img class="character boy" src="img/boyHead.jpg" />
+        <p><span id='weekday'>0</span>: <span id='time'></span></p>
+        <p>&pound;<span id='total'>0</span></p>
+        <p><a class='action' id='step1' href='#'>Next</a></p>
+        
+        <div id='day'>
+          <a href='#' class='work'>Work <span id='wage'></span></a> or 
+          <a href='#' class='choice'>Choice</a>
+        </div>
+        <div id='choice'>
+          <p class='desc'></p>
+        </div>
     </div>  
 
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+  <script type="text/javascript" src='http://code.jquery.com/jquery-1.7.1.min.js'></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 
   <!-- scripts concatenated and minified via ant build script -->
   <script src="js/gamelevel.js"></script>
+  <script type="text/javascript" src='js/game.js'></script>
   <script src="js/a.js"></script>
   <!-- end concatenated and minified scripts-->
 
