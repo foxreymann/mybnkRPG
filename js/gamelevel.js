@@ -60,5 +60,35 @@ rpg.choices = [
                 'feedback' : 'Bad choice. You will just waste your time.'
             }
         ],
+    },
+    {
+        'title': "It's payday, and you have some money in the bank. What do you do?",
+        'options': [
+            {
+                'title': 'Buy a new PS3 or a large screen TV',
+                'value': -100,
+                'feedback' : "Wrong choice. Make sure your bare necessities are paid off first."
+            },
+            {
+                'title': 'Pay the rent and the bills',
+                'value': 100,
+                'feedback' : 'Good idea: peace of mind for the rest of the month.'
+            }
+        ],
+    },
+    {
+        'title': "You want to throw a party, but you're broke. Use the credit card?",
+        'options': [
+            {
+                'title': "No, I can't afford it",
+                'value': -100,
+                'feedback' : "Good one. It's not always the most fun choice, but you can really use that money for other, more important things."
+            },
+            {
+                'title': 'Yes, I really need something to cheer me up',
+                'value': 100,
+                'feedback' : "Wrong - you'll be sorry when you have to pay it off later ... stay off the credit card unless your really need it" 
+            }
+        ],
     }
 ]
