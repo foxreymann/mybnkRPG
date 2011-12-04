@@ -37,7 +37,7 @@ rpg.choices = [
             {
                 'title': 'Visit MyBank blog',
                 'value': 20,
-                'feedback' : '<a href="http://www.mybnk.org/whats-new" target="_blank">Go to MyBank Blog</a>'
+                'feedback' : 'Well done. Good choice!<br /><br /><a href="http://www.mybnk.org/whats-new" class="nice small radius blue button" target="_blank">Go to MyBank Blog</a>'
             },
             {
                 'title': 'Play non-educational computer games',
@@ -52,7 +52,7 @@ rpg.choices = [
             {
                 'title': 'Check you bank account',
                 'value': 20,
-                'feedback' : "<a class='bank barclays' href='http://ibank.barclays.co.uk'>Barclays</a><a class='bank lloyds' href='https://online.lloydstsb.co.uk/'>Lloyds TSB</a><a class='bank hsbc' href='http://www.hsbc.co.uk/1/2/personal'>HSBC</a><a class='bank natwest' href='https://www.nwolb.com'>Natwest</a><a class='bank santander' href='http://www.santander.co.uk'>Santander</a>"
+                'feedback' : "Well done! Right choice.<br /><br />Please choose your bank:<br /><br /><a class='nice small radius blue button' target='_blank' href='http://ibank.barclays.co.uk'>Barclays</a><br /><br /><a class='nice small radius blue button' target='_blank' href='https://online.lloydstsb.co.uk/'>Lloyds TSB</a><br /><br /><a class='nice small radius blue button' target='_blank' href='http://www.hsbc.co.uk/1/2/personal'>HSBC</a><br /><br /><a class='nice small radius blue button' target='_blank' href='https://www.nwolb.com'>Natwest</a><br /><br /><a class='nice small radius blue button' target='_blank' href='http://www.santander.co.uk'>Santander</a>"
             },
             {
                 'title': 'Browse Facebook',

@@ -67,3 +67,9 @@
 #ok {
     display:none;
 }
+#feedback{
+    text-align:center;
+}
+#info{
+    margin: 0 0 2%;
+}   
