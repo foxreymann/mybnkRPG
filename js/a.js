@@ -26,8 +26,18 @@ rpg.startGame = function(gender) {
   tick();
   
   $('.option').live('click',function(){
-    value = parseInt($(this).data().value)
-    money += value
+    value = parseInt($(this).data().value);
+    money += value;
+    $('#choice').fadeOut();
+    $('#ok').fadeIn();
+    if(value >= 0) {
+        $('#feedback .success').fadeIn();
+    } else {
+        $('#feedback .error').fadeIn();
+    }
+  });
+
+  $('#ok').live('click',function(){
     nextPartOfDay();
   });
   
@@ -45,13 +55,14 @@ rpg.startGame = function(gender) {
   }
   
   function randomChoice(){
-    c = rpg.choices[Math.floor(Math.random()*rpg.choices.length)]
+    c = rpg.choices[Math.floor(Math.random()*rpg.choices.length)];
+console.log(c);
     return c
   }
   
   function nextPartOfDay(){
     daySection += 1;
-    tick()
+    tick();
     switch(daySection){
       case 1:
         console.log('morning')
@@ -73,24 +84,24 @@ rpg.startGame = function(gender) {
   
   function tick(){
     $('.option').remove();
+    $('#feedback .success, #feedback .error, #ok').fadeOut();
     $('#total').text(money)
     $('#weekday').text(daysOfTheWeek[dayOfWeek])
     $('#day, #choice').hide()
     $('.action').show()
     $('#time').text(timesOfTheDay[daySection -1])
-    $('#choice').show();
+    $('#choice').fadeIn();
     $('#day').hide();
     choice = randomChoice()
     $('#choice .desc').text(choice.title)
     $.each(choice.options, function(i,option){
-      html = "<div class='row'><div class='twelve columns'><a href='#' class='option white radius nice button' id='option"+i+"' data-value='"+option.value+"'>"+option.title+"</a></div></div>";
-      $('#choice .desc').after(html)
-      if(option.url){
-        $('#option'+i).click(function(){
-          var newWindow = window.open(option.url, '_blank');
-          newWindow.focus();
-        })
-      }
+      html = "<div class='row'><div class='twelve columns'><a class='option white radius nice button' id='option"+i+"' data-value='"+option.value+"'>"+option.title+"</a></div></div>";
+      $('#choice .desc').after(html);
+        if(option.value >= 0) {
+            $('#feedback .success').html(option.feedback);
+        } else {
+            $('#feedback .error').html(option.feedback);
+        }
     })
 
     eraseCookies()
@@ -153,10 +164,10 @@ function eraseCookie(name) {
 }
 
 
-/*var character = readCookie('character')
+var character = readCookie('character')
 console.log(character)
 if(character){
   rpg.startGame(character);
-}*/
+}
 
 $("#startScreen a.button").show();

@@ -61,5 +61,9 @@
 .option {
     margin:0 0 1%;
 }
-
-
+#feedback .success, #feedback .error{
+    display:none;
+}
+#ok {
+    display:none;
+}

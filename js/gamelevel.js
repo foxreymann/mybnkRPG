@@ -37,7 +37,7 @@ rpg.choices = [
             {
                 'title': 'Visit MyBank blog',
                 'value': 20,
-                'feedback' : 'http://www.mybnk.org/whats-new'
+                'feedback' : '<a href="http://www.mybnk.org/whats-new" target="_blank">Go to MyBank Blog</a>'
             },
             {
                 'title': 'Play non-educational computer games',
