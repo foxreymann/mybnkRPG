@@ -56,7 +56,6 @@ rpg.startGame = function(gender) {
   
   function randomChoice(){
     c = rpg.choices[Math.floor(Math.random()*rpg.choices.length)];
-console.log(c);
     return c
   }
   
@@ -95,7 +94,7 @@ console.log(c);
     choice = randomChoice()
     $('#choice .desc').text(choice.title)
     $.each(choice.options, function(i,option){
-      html = "<div class='row'><div class='twelve columns'><a class='option white radius nice button' id='option"+i+"' data-value='"+option.value+"'>"+option.title+"</a></div></div>";
+      html = "<div class='row options'><div class='twelve columns'><a class='option white radius nice button' id='option"+i+"' data-value='"+option.value+"'>"+option.title+"</a></div></div>";
       $('#choice .desc').after(html);
         if(option.value > 0) {
             $('#feedback .success').html(option.feedback);

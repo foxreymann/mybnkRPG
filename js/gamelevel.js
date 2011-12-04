@@ -81,12 +81,12 @@ rpg.choices = [
         'options': [
             {
                 'title': "No, I can't afford it",
-                'value': -100,
+                'value': 100,
                 'feedback' : "Good one. It's not always the most fun choice, but you can really use that money for other, more important things."
             },
             {
                 'title': 'Yes, I really need something to cheer me up',
-                'value': 100,
+                'value': -100,
                 'feedback' : "Wrong - you'll be sorry when you have to pay it off later ... stay off the credit card unless your really need it" 
             }
         ],

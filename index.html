@@ -36,10 +36,9 @@
 		<div class="row" id="startScreen">
 			<div class="eight columns">
                 <h1>MyBnk RPG</h1>
-   				<h2>Learn to manage to your finance</h2>
    				<h2>From the debtor to the rich</h2>
 			</div>
-			<div class="four columns">
+			<div class="four columns" role="nav">
                 <br /><br />
                 <a href="#" class="nice small radius blue button" onclick="rpg.chooseCharacter()">Start game</a>
                 <a href="#" class="nice small radius blue button">Instructions</a>
@@ -60,7 +59,7 @@
             </div>
         </div>
 
-        <div id="gameScreen">
+        <div id="gameScreen" aria-live="polite">
        		<div class="row" id="info">
     			<div class="twelve columns">
                     <img class="character girl" src="img/girlHead.jpg" />
@@ -71,14 +70,16 @@
             </div>
        		<div class="row" id="choice">
     			<div class="twelve columns">
-                        <div class='desc alert-box warning'></div>
+                        <div class='desc alert-box warning'><br><br></div>
                 </div>            
             </div>
-       		<div class="row">
+       		<div class="row" id="feedbackRow">
     			<div class="twelve columns" id="feedback">
                     <div class='alert-box success'></div>
                     <div class='alert-box error'></div>
-                    <a href="#" id="ok" class="nice small radius black button">Next</a> 
+                    <br>
+                    <a href="#" id="ok" class="nice small radius black button">Next</a>
+                    <br><br>     
                 </div>            
             </div>
        		<div class="row">
@@ -98,8 +99,8 @@
 	<!-- Included JS Files -->
 	<script src="javascripts/foundation.js"></script>
 	<script src="js/jquery-1.7.1.min.js"></script>
-	<script src="js/gamelevel.js"></script>
-	<script src="js/a.js?v=5"></script>
+	<script src="js/gamelevel.js?v=8"></script>
+	<script src="js/a.js?v=7"></script>
 	
 </body>
 </html>
