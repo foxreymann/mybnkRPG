@@ -30,7 +30,7 @@ rpg.startGame = function(gender) {
     money += value;
     $('#choice').hide();
     $('#ok').fadeIn();
-    if(value >= 0) {
+    if(value > 0) {
         $('#feedback .success').fadeIn();
     } else {
         $('#feedback .error').fadeIn();
@@ -97,7 +97,7 @@ console.log(c);
     $.each(choice.options, function(i,option){
       html = "<div class='row'><div class='twelve columns'><a class='option white radius nice button' id='option"+i+"' data-value='"+option.value+"'>"+option.title+"</a></div></div>";
       $('#choice .desc').after(html);
-        if(option.value >= 0) {
+        if(option.value > 0) {
             $('#feedback .success').html(option.feedback);
         } else {
             $('#feedback .error').html(option.feedback);

@@ -22,12 +22,12 @@ rpg.choices = [
             {
                 'title': 'Sell it on online market place',
                 'value': +300,
-                'feedback' : 'Right choice. Insurance company gave you 100 pounds.'
+                'feedback' : 'Right choice. You don\'t second laptop.'
             },
             {
                 'title': 'Put it under the bed.',
                 'value': 0,
-                'feedback' : 'Bad choice. Killing people is against the law.'
+                'feedback' : 'Bad choice. Laptop will just lie under your bed forever.' 
             }
         ],
     },
@@ -55,9 +55,9 @@ rpg.choices = [
                 'feedback' : "Well done! Right choice.<br /><br />Please choose your bank:<br /><br /><a class='nice small radius blue button' target='_blank' href='http://ibank.barclays.co.uk'>Barclays</a><br /><br /><a class='nice small radius blue button' target='_blank' href='https://online.lloydstsb.co.uk/'>Lloyds TSB</a><br /><br /><a class='nice small radius blue button' target='_blank' href='http://www.hsbc.co.uk/1/2/personal'>HSBC</a><br /><br /><a class='nice small radius blue button' target='_blank' href='https://www.nwolb.com'>Natwest</a><br /><br /><a class='nice small radius blue button' target='_blank' href='http://www.santander.co.uk'>Santander</a>"
             },
             {
-                'title': 'Browse Facebook',
+                'title': 'Post stupid comments on Facebook',
                 'value': -20,
-                'feedback' : 'Bad choice. Killing people is against the law.'
+                'feedback' : 'Bad choice. You will just waste your time.'
             }
         ],
     }
