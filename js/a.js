@@ -28,7 +28,7 @@ rpg.startGame = function(gender) {
   $('.option').live('click',function(){
     value = parseInt($(this).data().value);
     money += value;
-    $('#choice').fadeOut();
+    $('#choice').hide();
     $('#ok').fadeIn();
     if(value >= 0) {
         $('#feedback .success').fadeIn();
